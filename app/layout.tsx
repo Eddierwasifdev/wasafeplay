@@ -12,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { DialogDemo } from "@/components/dialog-search";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,6 +61,7 @@ export default function RootLayout({
                   </div>
                 </div>
               </header>
+              <Analytics />
               {children}
             </SidebarInset>
           </SidebarProvider>

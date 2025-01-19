@@ -7,13 +7,11 @@ import Link from "next/link";
 import TvTopRated from "./(home)/tv-toprated";
 import { useState } from "react";
 import MovieTopRated from "./(home)/movie-toprated";
-import { Analytics } from "@vercel/analytics/react";
 export default function Home() {
   const [type, setType] = useState("tv");
 
   return (
     <div className="flex flex-col justify-center items-center place-content-center px-[10%]">
-      <Analytics />
       <div className="flex flex-col justify-center items-center">
         <Scroll />
 
