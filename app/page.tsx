@@ -7,11 +7,13 @@ import Link from "next/link";
 import TvTopRated from "./(home)/tv-toprated";
 import { useState } from "react";
 import MovieTopRated from "./(home)/movie-toprated";
+import { Analytics } from "@vercel/analytics/react";
 export default function Home() {
   const [type, setType] = useState("tv");
 
   return (
     <div className="flex flex-col justify-center items-center place-content-center px-[10%]">
+      <Analytics />
       <div className="flex flex-col justify-center items-center">
         <Scroll />
 
@@ -56,7 +58,8 @@ export default function Home() {
                       : "bg-primary/40 text-secondary hover:bg-primary/70 hover:text-white" // Inactive button is transparent with hover effect
                   }`}
                   aria-pressed={type === item}
-                  onClick={() => setType(item)}>
+                  onClick={() => setType(item)}
+                >
                   {item.toUpperCase()}
                 </button>
               ))}
