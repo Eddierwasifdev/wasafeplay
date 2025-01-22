@@ -20,7 +20,9 @@ export function DialogDemo() {
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       {/* Trigger button */}
       <DialogTrigger asChild>
-        <Button className="border-[1px] w-48 rounded-lg ">Search...</Button>
+        <Button className="border-[1px] w-full sm:w-3/4 rounded-lg ">
+          Search...
+        </Button>
       </DialogTrigger>
 
       <DialogTitle></DialogTitle>

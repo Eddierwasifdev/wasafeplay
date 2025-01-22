@@ -11,7 +11,7 @@ export default function Home() {
   const [type, setType] = useState("tv");
 
   return (
-    <div className="flex flex-col justify-center items-center place-content-center px-[10%]">
+    <div className="flex flex-col justify-center items-center place-content-center px-[10%] dark:bg-slate-900">
       <div className="flex flex-col justify-center items-center">
         <Scroll />
 

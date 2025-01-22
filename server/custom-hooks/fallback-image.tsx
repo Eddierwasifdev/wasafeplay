@@ -1,5 +1,4 @@
 "use client";
-import Loader from "@/components/loader";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
@@ -38,7 +37,7 @@ const FallbackImage: React.FC<Props> = ({
         {/* Display loader when loading is true */}
       </div>
       <Image
-        className="rounded-lg"
+        className={`rounded-lg ${className}`}
         src={error ? fallbackSrc : src} // Use fallbackSrc if error occurs
         alt={alt}
         width={width}

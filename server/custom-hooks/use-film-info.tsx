@@ -80,7 +80,7 @@ function FilmInfo({ filmId, isMovie }: { filmId: string; isMovie: string }) {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="md:px-[5%] pt-8">
+    <div className="md:px-[5%] pt-8 dark:bg-slate-900">
       <div className="relative w-full h-full">
         <div className="flex flex-col xl:flex-row gap-5 md:justify-center md:items-center lg:justify-start lg:items-start">
           <div className="w-full">
