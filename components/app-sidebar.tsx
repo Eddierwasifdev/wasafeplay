@@ -1,15 +1,7 @@
-import { Clapperboard, Home, Tv } from "lucide-react";
+import { AlignLeft, Clapperboard, Home, Tv } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 // Menu items.
 const items = [
@@ -32,27 +24,24 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar>
-      <SidebarContent className="bg-secondary">
-        <SidebarGroup>
-          <SidebarGroupLabel>Section</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-      {/* footer */}
-    </Sidebar>
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline">
+          <AlignLeft />
+        </Button>
+      </SheetTrigger>
+      <SheetContent className="space-y-6">
+        {items.map((item, index) => (
+          <a
+            href={item.url}
+            key={index}
+            className="flex items-center space-x-2 "
+          >
+            <item.icon />
+            <span>{item.title}</span>
+          </a>
+        ))}
+      </SheetContent>
+    </Sheet>
   );
 }
